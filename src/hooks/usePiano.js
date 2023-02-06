@@ -10,20 +10,25 @@ const usePiano = () => {
 
         if (!audio) return;
 
-        key.classList.add("bg-blue-300");
-        audio.currentTime = 0;
-        audio.play();
+        const playAudio = () => {
+            key.classList.add("bg-blue-300")
+            audio.currentTime = 0
+            audio.play()
+            removeActiveKey()
+        }
 
-        setTimeout(() => {
-            key.classList.remove('bg-blue-300')
-        }, 330)
+        const removeActiveKey = () => {
+            setTimeout(() => {
+                key.classList.remove('bg-blue-300')
+            }, 330)
+        }
+
+        playAudio()
 
     }
 
     useEffect(() => {
-
-        window.addEventListener("keydown", playNote);
-
+        window.addEventListener("keydown", playNote)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

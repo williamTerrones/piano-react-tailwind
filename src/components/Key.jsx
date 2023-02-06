@@ -8,7 +8,7 @@ const Key = ({
 
     return (
         <div data-key={dataKey} onClick={() => playNote && playNote(dataKey) }
-        className={`${position} key border-solid border-black border-[4px] rounded-lg block box-border z-[2] ${className} ${baseClassName} `} 
+        className={`${position} key border-solid border-black sm:hover:bg-opacity-80 border-[4px] rounded-lg block box-border z-[2] ${className} ${baseClassName} `} 
         data-note={dataNote}>
             <KeyLetter>
                 {children}

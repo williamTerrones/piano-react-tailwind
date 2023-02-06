@@ -6,10 +6,10 @@ const Piano = () => {
 
     const {playNote} = usePiano()
 
-    return <>
+    return <div className='py-5'>
     <Keys playNote={playNote} />
     <Audios />
-    </>
+    </div>
 
 }
 
