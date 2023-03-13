@@ -1,6 +1,9 @@
-const { useEffect } = require("react");
+const { useEffect, useState } = require("react");
 
 const usePiano = () => {
+
+
+    const [pianoSound, setPianoSound] = useState('piano')
 
     const playNote = (e) => {
 
@@ -33,7 +36,9 @@ const usePiano = () => {
     }, [])
 
     return {
-        playNote
+        playNote,
+        setPianoSound,
+        pianoSound,
     }
 
 }

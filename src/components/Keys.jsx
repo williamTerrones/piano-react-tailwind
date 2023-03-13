@@ -2,7 +2,13 @@ import { AUDIOS_LIST } from '../constants/audios'
 import Key from './Key'
 import KeySharp from './KeySharp'
 
-const Keys = ({ playNote }) => {
+const Keys = ({ playNote, pianoSound }) => {
+
+    const colors = {
+        piano:'bg-white',
+        organo:'bg-yellow-900',
+        acordeon:'bg-red-300'
+    }
 
     return (
         <div className="block w-full h-[350px] max-h-[880px] relative ">
@@ -10,7 +16,7 @@ const Keys = ({ playNote }) => {
                 AUDIOS_LIST.map((e, i) => {
 
                     if (!e.left) {
-                        return <Key {...e} playNote={playNote} key={i}>
+                        return <Key {...e} playNote={playNote} key={i} backgroundColor={colors[pianoSound]}>
                             {e.key}
                         </Key>
                     }
