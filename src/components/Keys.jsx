@@ -1,8 +1,12 @@
+import { useContext } from 'react'
 import { AUDIOS_LIST } from '../constants/audios'
 import Key from './Key'
 import KeySharp from './KeySharp'
+import { PianoContext } from './Piano'
 
-const Keys = ({ playNote, pianoSound }) => {
+const Keys = () => {
+
+    const {pianoSound} = useContext(PianoContext)
 
     const colors = {
         piano:'bg-white',
@@ -16,12 +20,12 @@ const Keys = ({ playNote, pianoSound }) => {
                 AUDIOS_LIST.map((e, i) => {
 
                     if (!e.left) {
-                        return <Key {...e} playNote={playNote} key={i} backgroundColor={colors[pianoSound]}>
+                        return <Key {...e} key={i} backgroundColor={colors[pianoSound]}>
                             {e.key}
                         </Key>
                     }
 
-                    return <KeySharp {...e} playNote={playNote} key={i}>
+                    return <KeySharp {...e} key={i}>
                         {e.key}
                     </KeySharp>
 
